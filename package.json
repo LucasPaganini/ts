@@ -26,6 +26,10 @@
     "url": "https://github.com/LucasPaganini/ts-utils/issues"
   },
   "homepage": "https://github.com/LucasPaganini/ts-utils#readme",
+  "dependencies": {
+    "@types/lodash-es": "^4.17.5",
+    "lodash-es": "^4.17.21"
+  },
   "devDependencies": {
     "@types/jasmine": "^3.6.3",
     "@types/yargs": "^16.0.0",
