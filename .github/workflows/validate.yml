@@ -1,0 +1,59 @@
+name: Validate Pull Request
+
+on:
+  pull_request:
+    branches: [master, dev]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.17.0
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.17.0'
+      - run: npm i -g npm@7.15.0
+      - run: npm ci
+      - run: npm run lint
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.17.0
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.17.0'
+      - run: npm i -g npm@7.15.0
+      - run: npm ci
+      - run: npm run build
+      - run: npm run build:tests
+
+  test-jasmine:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.17.0
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.17.0'
+      - run: npm i -g npm@7.15.0
+      - run: npm ci
+      - run: npm run test:jasmine
+
+  test-ts-compatibility:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.17.0
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.17.0'
+      - run: npm i -g npm@7.15.0
+      - run: npm ci
+      - run: npm run test:ts-compatibility

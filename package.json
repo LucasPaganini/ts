@@ -1,0 +1,51 @@
+{
+  "name": "@lucaspaganini/ts-utils",
+  "version": "0.0.0-PLACEHOLDER",
+  "description": "Utilities for TypeScript projects",
+  "keywords": [
+    "typescript",
+    "narrowing",
+    "utilities"
+  ],
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "scripts/test",
+    "build": "scripts/build",
+    "build:tests": "scripts/build --tests --assets",
+    "lint": "scripts/lint",
+    "format": "scripts/format",
+    "prepublishOnly": "npm clean-install && npm run format && npm run lint && npm test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasPaganini/ts-utils.git"
+  },
+  "author": "Lucas Paganini <me@lucaspaganini.com> (https://lucaspaganini.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LucasPaganini/ts-utils/issues"
+  },
+  "homepage": "https://github.com/LucasPaganini/ts-utils#readme",
+  "devDependencies": {
+    "@types/jasmine": "^3.6.3",
+    "@types/yargs": "^16.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "@typescript-eslint/parser": "^4.15.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "expect-type": "^0.11.0",
+    "jasmine": "^3.6.4",
+    "jasmine-core": "^3.6.0",
+    "jasmine-spec-reporter": "^6.0.0",
+    "license-check-and-add": "^4.0.1",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
+    "tsc-alias": "^1.2.6",
+    "typescript": "^4.1.5",
+    "yargs": "^16.2.0"
+  }
+}

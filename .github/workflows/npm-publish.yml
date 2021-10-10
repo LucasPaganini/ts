@@ -1,0 +1,29 @@
+# This workflow will run tests using node and then publish a package to NPM when a release is created
+
+name: Publish Package to NPM
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js 14.17.0
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.17.0'
+          registry-url: https://registry.npmjs.org/
+      - name: Use NPM 7.15.0
+        run: npm i -g npm@7.15.0
+
+      - name: Set the package version
+        run: npm version --no-git-tag-version ${{github.event.release.tag_name}}
+
+      - name: Publish on NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

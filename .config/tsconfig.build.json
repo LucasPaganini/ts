@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../dist-tsc",
+    "types": [],
+    "lib": ["ES2020", "DOM"]
+  },
+  "include": ["../src/**/*"],
+  "exclude": ["../src/**/*.spec.ts"]
+}
