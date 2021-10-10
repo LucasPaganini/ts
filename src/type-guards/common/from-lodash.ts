@@ -18,7 +18,7 @@ import {
   isNumber,
   isString,
   isUndefined,
-} from 'lodash-es'
+} from 'lodash'
 import { PredicateFn } from '../core/predicate-fn'
 
 export { isArray, isBoolean, isEmpty, isDeepEqual, isFunction, isNil, isNull, isNumber, isString, isUndefined }

@@ -6,7 +6,7 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
-import { isNull } from 'lodash-es'
+import { isNull } from '~/type-guards/common/from-lodash'
 
 /**
  * Asserts that the given value has the given properties. Throws if it doesn't.
