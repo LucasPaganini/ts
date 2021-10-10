@@ -7,7 +7,7 @@
  **************************************************************************/
 
 import { expectTypeOf } from 'expect-type'
-import { makeHasProperties } from './has-properties'
+import { makeHasProperties } from './make-has-properties'
 
 describe(makeHasProperties.name, () => {
   it('returns a predicate function that checks if value has the given properties', () => {

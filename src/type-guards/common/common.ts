@@ -6,7 +6,7 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
-import { makeIsNot } from '../core/is-not'
+import { makeIsNot } from '../core/make-is-not'
 import {
   isArray,
   isBoolean,

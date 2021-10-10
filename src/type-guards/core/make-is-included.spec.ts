@@ -7,7 +7,7 @@
  **************************************************************************/
 
 import { expectTypeOf } from 'expect-type'
-import { makeIsIncluded } from './is-included'
+import { makeIsIncluded } from './make-is-included'
 
 describe(makeIsIncluded.name, () => {
   it('returns a predicate function that checks if value is included in the iterable', () => {

@@ -7,8 +7,8 @@
  **************************************************************************/
 
 import { expectTypeOf } from 'expect-type'
-import { makeIsInstance } from './is-instance'
-import { makeIsNot } from './is-not'
+import { makeIsInstance } from './make-is-instance'
+import { makeIsNot } from './make-is-not'
 
 describe(makeIsNot.name, () => {
   it('returns an inversed predicate function', () => {

@@ -6,8 +6,8 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
-export { makeHasProperties } from './has-properties'
-export { makeIsIncluded } from './is-included'
-export { makeIsInstance } from './is-instance'
-export { makeIsNot } from './is-not'
+export { makeHasProperties } from './make-has-properties'
+export { makeIsIncluded } from './make-is-included'
+export { makeIsInstance } from './make-is-instance'
+export { makeIsNot } from './make-is-not'
 export { PredicateFn, UnguardedPredicateFn, UnpackedPredicateFn } from './predicate-fn'

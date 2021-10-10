@@ -7,7 +7,7 @@
  **************************************************************************/
 
 import { expectTypeOf } from 'expect-type'
-import { makeIsInstance } from './is-instance'
+import { makeIsInstance } from './make-is-instance'
 
 describe(makeIsInstance.name, () => {
   it('returns a predicate function that checks if value is an instance of the given class', () => {
