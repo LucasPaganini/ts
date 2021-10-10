@@ -1,0 +1,5 @@
+export { makeHasProperties } from './has-properties'
+export { makeIsIncluded } from './is-included'
+export { makeIsInstance } from './is-instance'
+export { makeIsNot } from './is-not'
+export { PredicateFn, UnguardedPredicateFn, UnpackedPredicateFn } from './predicate-fn'
