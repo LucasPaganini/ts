@@ -6,8 +6,9 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
+export { makeAsyncPredicateFn } from './make-async-predicate-fn'
 export { makeHasProperties } from './make-has-properties'
 export { makeIsIncluded } from './make-is-included'
 export { makeIsInstance } from './make-is-instance'
 export { makeIsNot } from './make-is-not'
-export { PredicateFn, UnguardedPredicateFn, UnpackedPredicateFn } from './predicate-fn'
+export { AsyncUnguardedPredicateFn, PredicateFn, UnguardedPredicateFn, UnpackedPredicateFn } from './predicate-fn'
