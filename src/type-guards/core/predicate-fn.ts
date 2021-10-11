@@ -9,25 +9,27 @@
 /**
  * A predicate function that takes a single value and serves as a type guard for a given type T
  */
-export type PredicateFn<T = any> = (v: unknown) => v is T
+export type PredicateFunction<T = any> = (v: unknown) => v is T
 
 /**
- * An async predicate function that takes a single value and returns a {@link PredicateFn} wrapped
+ * An async predicate function that takes a single value and returns a {@link PredicateFunction} wrapped
  * in a {@link Promise} that serves as a type guard for a given type T
  */
-export type AsyncPredicateFn<T = any> = (value: unknown) => Promise<PredicateFn<T>>
+export type AsyncPredicateFunction<T = any> = (value: unknown) => Promise<PredicateFunction<T>>
 
 /**
  * A predicate function that accepts any number of parameters
  */
-export type UnguardedPredicateFn<Params extends Array<any> = Array<any>> = (...args: Params) => boolean
+export type UnguardedPredicateFunction<Params extends Array<any> = Array<any>> = (...args: Params) => boolean
 
 /**
  * An async predicate function that accepts any number of parameters
  */
-export type AsyncUnguardedPredicateFn<Params extends Array<any> = Array<any>> = (...args: Params) => Promise<boolean>
+export type AsyncUnguardedPredicateFunction<Params extends Array<any> = Array<any>> = (
+  ...args: Params
+) => Promise<boolean>
 
 /**
- *  Unpacks the type T from a {@link PredicateFn}
+ *  Unpacks the type T from a {@link PredicateFunction}
  */
-export type UnpackedPredicateFn<F extends PredicateFn> = F extends PredicateFn<infer T> ? T : never
+export type UnpackedPredicateFunction<F extends PredicateFunction> = F extends PredicateFunction<infer T> ? T : never

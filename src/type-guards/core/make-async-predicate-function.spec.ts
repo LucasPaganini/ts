@@ -8,13 +8,13 @@
 
 import { expectTypeOf } from 'expect-type'
 import { isDeepEqual, isEmpty, isNumber, isString } from '../common/from-lodash'
-import { makeAsyncPredicateFn } from './make-async-predicate-fn'
-import { PredicateFn, UnguardedPredicateFn } from './predicate-fn'
+import { makeAsyncPredicateFunction } from './make-async-predicate-function'
+import { PredicateFunction, UnguardedPredicateFunction } from './predicate-fn'
 
-describe(makeAsyncPredicateFn.name, () => {
+describe(makeAsyncPredicateFunction.name, () => {
   it('throws if the generated function is called with different arguments', async () => {
     const _isNumberAsync = (value: unknown) => Promise.resolve(isNumber(value))
-    const isNumberAsync = makeAsyncPredicateFn<number>(_isNumberAsync)
+    const isNumberAsync = makeAsyncPredicateFunction<number>(_isNumberAsync)
 
     const foo = 1
     const bar = 2
@@ -24,9 +24,9 @@ describe(makeAsyncPredicateFn.name, () => {
     expect(() => fooIsNumber(bar)).toThrow()
   })
 
-  it('correctly calls the AsyncUnguardedPredicateFn to make the check', async () => {
+  it('correctly calls the AsyncUnguardedPredicateFunction to make the check', async () => {
     const asyncFnSpy = jasmine.createSpy('_isNumberAsync')
-    const isNumberAsync = makeAsyncPredicateFn<number>(asyncFnSpy)
+    const isNumberAsync = makeAsyncPredicateFunction<number>(asyncFnSpy)
 
     asyncFnSpy.and.resolveTo(true)
     const isNumber_true = await isNumberAsync(1)
@@ -39,9 +39,9 @@ describe(makeAsyncPredicateFn.name, () => {
 
   it('has the correct types', async () => {
     const _isStringAsync = (value: unknown) => Promise.resolve(isString(value))
-    const isStringAsync = makeAsyncPredicateFn<string>(_isStringAsync)
+    const isStringAsync = makeAsyncPredicateFunction<string>(_isStringAsync)
     expectTypeOf(isStringAsync).toBeCallableWith(1)
-    expectTypeOf(isStringAsync).returns.toEqualTypeOf<Promise<PredicateFn<string>>>()
+    expectTypeOf(isStringAsync).returns.toEqualTypeOf<Promise<PredicateFunction<string>>>()
     expectTypeOf(isStringAsync).parameters.toEqualTypeOf<[unknown]>()
     const aaa = 1 as number | string | Date
     const aaaIsString = await isStringAsync(aaa)
@@ -55,9 +55,9 @@ describe(makeAsyncPredicateFn.name, () => {
     }
 
     const _isNumberAsync = (value: unknown) => Promise.resolve(isNumber(value))
-    const isNumberAsync = makeAsyncPredicateFn<number>(_isNumberAsync)
+    const isNumberAsync = makeAsyncPredicateFunction<number>(_isNumberAsync)
     expectTypeOf(isNumberAsync).toBeCallableWith(1)
-    expectTypeOf(isNumberAsync).returns.toEqualTypeOf<Promise<PredicateFn<number>>>()
+    expectTypeOf(isNumberAsync).returns.toEqualTypeOf<Promise<PredicateFunction<number>>>()
     expectTypeOf(isNumberAsync).parameters.toEqualTypeOf<[unknown]>()
     const bbb = 1 as number | string | Date
     const bbbIsNumber = await isNumberAsync(bbb)
@@ -71,9 +71,9 @@ describe(makeAsyncPredicateFn.name, () => {
     }
 
     const _isEmptyAsync = (value: unknown) => Promise.resolve(isEmpty(value))
-    const isEmptyAsync = makeAsyncPredicateFn(_isEmptyAsync)
+    const isEmptyAsync = makeAsyncPredicateFunction(_isEmptyAsync)
     expectTypeOf(isEmptyAsync).toBeCallableWith(1)
-    expectTypeOf(isEmptyAsync).returns.toEqualTypeOf<Promise<UnguardedPredicateFn<[unknown]>>>()
+    expectTypeOf(isEmptyAsync).returns.toEqualTypeOf<Promise<UnguardedPredicateFunction<[unknown]>>>()
     expectTypeOf(isEmptyAsync).parameters.toEqualTypeOf<[unknown]>()
     const ccc = 1 as number | string | Date
     const cccIsEmpty = await isEmptyAsync(ccc)
@@ -87,9 +87,9 @@ describe(makeAsyncPredicateFn.name, () => {
     }
 
     const _isDeepEqualAsync = (a: unknown, b: unknown) => Promise.resolve(isDeepEqual(a, b))
-    const isDeepEqualAsync = makeAsyncPredicateFn(_isDeepEqualAsync)
+    const isDeepEqualAsync = makeAsyncPredicateFunction(_isDeepEqualAsync)
     expectTypeOf(isDeepEqualAsync).toBeCallableWith(1, 2)
-    expectTypeOf(isDeepEqualAsync).returns.toEqualTypeOf<Promise<UnguardedPredicateFn<[unknown, unknown]>>>()
+    expectTypeOf(isDeepEqualAsync).returns.toEqualTypeOf<Promise<UnguardedPredicateFunction<[unknown, unknown]>>>()
     expectTypeOf(isDeepEqualAsync).parameters.toEqualTypeOf<[unknown, unknown]>()
   })
 })

@@ -7,9 +7,14 @@
  **************************************************************************/
 
 export { fromAssertionFunction } from './from-assertion-function'
-export { makeAsyncPredicateFn } from './make-async-predicate-fn'
+export { makeAsyncPredicateFunction } from './make-async-predicate-function'
 export { makeHasProperties } from './make-has-properties'
 export { makeIsIncluded } from './make-is-included'
 export { makeIsInstance } from './make-is-instance'
 export { makeIsNot } from './make-is-not'
-export { AsyncUnguardedPredicateFn, PredicateFn, UnguardedPredicateFn, UnpackedPredicateFn } from './predicate-fn'
+export {
+  AsyncUnguardedPredicateFunction as AsyncUnguardedPredicateFunction,
+  PredicateFunction as PredicateFunction,
+  UnguardedPredicateFunction as UnguardedPredicateFunction,
+  UnpackedPredicateFunction as UnpackedPredicateFunction,
+} from './predicate-fn'

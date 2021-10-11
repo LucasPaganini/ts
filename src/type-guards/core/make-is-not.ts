@@ -6,7 +6,7 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
-import { PredicateFn, UnguardedPredicateFn, UnpackedPredicateFn } from './predicate-fn'
+import { PredicateFunction, UnguardedPredicateFunction, UnpackedPredicateFunction } from './predicate-fn'
 
 /**
  * @privateRemarks
@@ -15,7 +15,7 @@ import { PredicateFn, UnguardedPredicateFn, UnpackedPredicateFn } from './predic
  */
 type MakeIsNot = {
   /**
-   * Creates an inversed `PredicateFn` from an existing `PredicateFn`.
+   * Creates an inversed `PredicateFunction` from an existing `PredicateFunction`.
    *
    * @example
    * ```ts
@@ -28,13 +28,13 @@ type MakeIsNot = {
    *
    * @param fn Predicate function to inverse
    */
-  <F extends PredicateFn>(fn: F): <V extends Parameters<F>[0] = Parameters<F>[0]>(
+  <F extends PredicateFunction>(fn: F): <V extends Parameters<F>[0] = Parameters<F>[0]>(
     v: V,
-  ) => v is Exclude<V, UnpackedPredicateFn<F>>
+  ) => v is Exclude<V, UnpackedPredicateFunction<F>>
 
   /**
-   * Creates an inversed `UnguardedPredicateFn` from an existing
-   * `UnguardedPredicateFn`.
+   * Creates an inversed `UnguardedPredicateFunction` from an existing
+   * `UnguardedPredicateFunction`.
    *
    * @example
    * ```ts
@@ -47,7 +47,7 @@ type MakeIsNot = {
    *
    * @param fn Unguarded predicate function to inverse
    */
-  <F extends UnguardedPredicateFn>(fn: F): (
+  <F extends UnguardedPredicateFunction>(fn: F): (
     ...args: Parameters<F>
   ) => ReturnType<F> extends true ? false : ReturnType<F> extends false ? true : boolean
 }

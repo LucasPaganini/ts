@@ -19,7 +19,7 @@ import {
   isString,
   isUndefined,
 } from 'lodash'
-import { PredicateFn } from '../core/predicate-fn'
+import { PredicateFunction } from '../core/predicate-fn'
 
 export { isArray, isBoolean, isEmpty, isDeepEqual, isFunction, isNil, isNull, isNumber, isString, isUndefined }
 
@@ -45,4 +45,4 @@ export { isArray, isBoolean, isEmpty, isDeepEqual, isFunction, isNil, isNull, is
  * _.isInteger('3');
  * // => false
  */
-export const isInteger = lodashIsInteger as PredicateFn<number>
+export const isInteger = lodashIsInteger as PredicateFunction<number>

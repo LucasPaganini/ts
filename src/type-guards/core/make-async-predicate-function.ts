@@ -7,27 +7,29 @@
  **************************************************************************/
 
 import { zip } from 'lodash'
-import { AsyncPredicateFn, AsyncUnguardedPredicateFn, UnguardedPredicateFn } from './predicate-fn'
+import { AsyncPredicateFunction, AsyncUnguardedPredicateFunction, UnguardedPredicateFunction } from './predicate-fn'
 
 /**
  * @privateRemarks
  *
- * This type enables {@link makeAsyncPredicateFn}, which is defined below.
+ * This type enables {@link makeAsyncPredicateFunction}, which is defined below.
  */
-type MakeAsyncPredicateFn = {
+type MakeAsyncPredicateFunction = {
   /**
-   * Creates a {@link UnguardedPredicateFn} from an existing {@link AsyncUnguardedPredicateFn}.
+   * Creates a {@link UnguardedPredicateFunction} from an existing {@link AsyncUnguardedPredicateFunction}.
    *
    * @param fn Async unguarded predicate function
    */
-  <F extends AsyncUnguardedPredicateFn>(fn: F): (...args: Parameters<F>) => Promise<UnguardedPredicateFn<Parameters<F>>>
+  <F extends AsyncUnguardedPredicateFunction>(fn: F): (
+    ...args: Parameters<F>
+  ) => Promise<UnguardedPredicateFunction<Parameters<F>>>
 
   /**
-   * Creates a {@link PredicateFn} from an existing {@link AsyncUnguardedPredicateFn}.
+   * Creates a {@link PredicateFunction} from an existing {@link AsyncUnguardedPredicateFunction}.
    *
    * @param fn Async unguarded predicate function
    */
-  <T>(fn: AsyncUnguardedPredicateFn): AsyncPredicateFn<T>
+  <T>(fn: AsyncUnguardedPredicateFunction): AsyncPredicateFunction<T>
 }
 
 /**
@@ -37,8 +39,8 @@ type MakeAsyncPredicateFn = {
  *
  * @param fn Async predicate function (guarded or not)
  */
-export const makeAsyncPredicateFn: MakeAsyncPredicateFn =
-  (fn: AsyncUnguardedPredicateFn) =>
+export const makeAsyncPredicateFunction: MakeAsyncPredicateFunction =
+  (fn: AsyncUnguardedPredicateFunction) =>
   (...args: Array<any>) =>
     fn(...args).then(
       r =>

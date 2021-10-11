@@ -6,10 +6,10 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
-import { PredicateFn } from './predicate-fn'
+import { PredicateFunction } from './predicate-fn'
 
 /**
- * Creates a `PredicateFn` that checks if a value is included in the given
+ * Creates a `PredicateFunction` that checks if a value is included in the given
  * iterable.
  *
  * @example
@@ -22,7 +22,7 @@ import { PredicateFn } from './predicate-fn'
  *
  * @param iterable Iterable to check if value is included in
  */
-export const makeIsIncluded = <T>(iterable: Iterable<T>): PredicateFn<T> => {
+export const makeIsIncluded = <T>(iterable: Iterable<T>): PredicateFunction<T> => {
   /**
    * We create a new Set, even if the iterable itself is already a Set because
    * the user could mutate it and break the check. For example:

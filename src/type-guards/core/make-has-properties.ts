@@ -7,10 +7,10 @@
  **************************************************************************/
 
 import { assertHasProperties } from '~/assertion-guards/core/assert-has-properties'
-import { PredicateFn } from './predicate-fn'
+import { PredicateFunction } from './predicate-fn'
 
 /**
- * Creates a {@link PredicateFn} that checks if the given value has the given
+ * Creates a {@link PredicateFunction} that checks if the given value has the given
  * properties.
  *
  * @example
@@ -35,7 +35,7 @@ import { PredicateFn } from './predicate-fn'
  */
 export const makeHasProperties = <Property extends string>(
   properties: ReadonlyArray<Property>,
-): PredicateFn<Record<Property, unknown>> => {
+): PredicateFunction<Record<Property, unknown>> => {
   return (value: unknown): value is Record<Property, unknown> => {
     try {
       assertHasProperties(properties, value)

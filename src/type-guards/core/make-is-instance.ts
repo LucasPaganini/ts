@@ -6,10 +6,10 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
-import { PredicateFn } from './predicate-fn'
+import { PredicateFunction } from './predicate-fn'
 
 /**
- * Creates a `PredicateFn` that checks if a value is `instanceof` the given
+ * Creates a `PredicateFunction` that checks if a value is `instanceof` the given
  * class constructor.
  *
  * @example
@@ -22,6 +22,6 @@ import { PredicateFn } from './predicate-fn'
  * @param classConstructor Class constructor to check if value is `instanceof`
  */
 export const makeIsInstance =
-  <C extends new (...args: any) => any>(classConstructor: C): PredicateFn<InstanceType<C>> =>
+  <C extends new (...args: any) => any>(classConstructor: C): PredicateFunction<InstanceType<C>> =>
   (v: any): v is InstanceType<C> =>
     v instanceof classConstructor
