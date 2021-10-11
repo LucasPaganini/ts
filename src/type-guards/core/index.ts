@@ -6,6 +6,7 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
+export { fromAssertionFunction } from './from-assertion-function'
 export { makeAsyncPredicateFn } from './make-async-predicate-fn'
 export { makeHasProperties } from './make-has-properties'
 export { makeIsIncluded } from './make-is-included'
