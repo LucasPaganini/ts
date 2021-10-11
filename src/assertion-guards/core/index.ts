@@ -7,3 +7,4 @@
  **************************************************************************/
 
 export { assertHasProperties } from './assert-has-properties'
+export { AssertionFunction, UnpackedAssertionFunction } from './assertion-function'
