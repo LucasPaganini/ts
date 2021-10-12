@@ -6,7 +6,6 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
-import { zip } from 'lodash'
 import { AsyncPredicateFunction, AsyncUnguardedPredicateFunction, UnguardedPredicateFunction } from './predicate-fn'
 
 /**
@@ -45,10 +44,19 @@ export const makeAsyncPredicateFunction: MakeAsyncPredicateFunction =
     fn(...args).then(
       r =>
         ((..._args: Array<any>) => {
-          if (args.length !== _args.length || zip(args, _args).some(([a, b]) => a !== b)) throw differentValueError()
+          if (arraysAreDifferent(args, _args)) throw differentValueError()
           return r
         }) as any,
     )
 
 const differentValueError = () =>
   Error(`The arguments given to the async generated function are different than the ones given to the initial function`)
+
+const arraysAreDifferent = <T>(a: Array<T>, b: Array<T>): boolean => {
+  // If the array lengths are different, the arrays are certainly different
+  if (a.length !== a.length) return true
+
+  // If their lengths are the same, we need to compare the values
+  const zippedArray = Array.from({ length: a.length }).map((_, i) => [a[i], a[i]])
+  return zippedArray.some(([a, b]) => a !== b)
+}

@@ -7,7 +7,7 @@
  **************************************************************************/
 
 import { expectTypeOf } from 'expect-type'
-import { isDeepEqual, isEmpty, isNumber, isString } from '../common/from-lodash'
+import { isEmpty, isEqual as isDeepEqual, isNumber, isString } from 'lodash'
 import { makeAsyncPredicateFunction } from './make-async-predicate-function'
 import { PredicateFunction, UnguardedPredicateFunction } from './predicate-fn'
 
