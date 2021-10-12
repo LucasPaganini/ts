@@ -6,7 +6,7 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
-import { PredicateFunction, UnguardedPredicateFunction, UnpackedPredicateFunction } from './predicate-fn'
+import { PredicateFunction, UnguardedPredicateFunction, UnpackPredicateFunction } from './predicate-fn'
 
 /**
  * @privateRemarks
@@ -30,7 +30,7 @@ type MakeIsNot = {
    */
   <F extends PredicateFunction>(fn: F): <V extends Parameters<F>[0] = Parameters<F>[0]>(
     v: V,
-  ) => v is Exclude<V, UnpackedPredicateFunction<F>>
+  ) => v is Exclude<V, UnpackPredicateFunction<F>>
 
   /**
    * Creates an inversed `UnguardedPredicateFunction` from an existing

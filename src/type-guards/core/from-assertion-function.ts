@@ -6,12 +6,12 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
-import { AssertionFunction, UnpackedAssertionFunction } from '~/assertion-guards'
+import { AssertionFunction, UnpackAssertionFunction } from '~/assertion-guards'
 import { PredicateFunction } from './predicate-fn'
 
 export const fromAssertionFunction =
-  <F extends AssertionFunction>(assert: F): PredicateFunction<UnpackedAssertionFunction<F>> =>
-  (v): v is UnpackedAssertionFunction<F> => {
+  <F extends AssertionFunction>(assert: F): PredicateFunction<UnpackAssertionFunction<F>> =>
+  (v): v is UnpackAssertionFunction<F> => {
     try {
       assert(v)
       return true

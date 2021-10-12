@@ -19,4 +19,4 @@ export type AssertionFunction<T = any> = {
   (a: any, ...args: Array<any>): asserts a is T
 }
 
-export type UnpackedAssertionFunction<F extends AssertionFunction> = F extends AssertionFunction<infer T> ? T : never
+export type UnpackAssertionFunction<F extends AssertionFunction> = F extends AssertionFunction<infer T> ? T : never

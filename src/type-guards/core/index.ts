@@ -16,5 +16,5 @@ export {
   AsyncUnguardedPredicateFunction as AsyncUnguardedPredicateFunction,
   PredicateFunction as PredicateFunction,
   UnguardedPredicateFunction as UnguardedPredicateFunction,
-  UnpackedPredicateFunction as UnpackedPredicateFunction,
+  UnpackPredicateFunction as UnpackPredicateFunction,
 } from './predicate-fn'

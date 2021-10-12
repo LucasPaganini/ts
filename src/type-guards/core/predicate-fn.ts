@@ -32,4 +32,4 @@ export type AsyncUnguardedPredicateFunction<Params extends Array<any> = Array<an
 /**
  *  Unpacks the type T from a {@link PredicateFunction}
  */
-export type UnpackedPredicateFunction<F extends PredicateFunction> = F extends PredicateFunction<infer T> ? T : never
+export type UnpackPredicateFunction<F extends PredicateFunction> = F extends PredicateFunction<infer T> ? T : never
