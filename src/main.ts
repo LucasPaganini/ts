@@ -6,6 +6,6 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
-export * from './assertion-guards'
-export * from './type-guards'
+export * from './assertions'
+export * from './predicates'
 export * from './types'

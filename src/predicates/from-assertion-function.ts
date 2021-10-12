@@ -6,7 +6,7 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
-import { AssertionFunction, UnpackAssertionFunction } from '~/assertion-guards'
+import { AssertionFunction, UnpackAssertionFunction } from '~/assertions/assertion-function'
 import { PredicateFunction } from './predicate-fn'
 
 export const fromAssertionFunction =

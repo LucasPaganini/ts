@@ -6,7 +6,7 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
-import { assertHasProperties } from '~/assertion-guards/assert-has-properties'
+import { assertHasProperties } from '~/assertions/assert-has-properties'
 import { PredicateFunction } from './predicate-fn'
 
 /**
