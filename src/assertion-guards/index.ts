@@ -6,4 +6,5 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
-export * from './core'
+export { assertHasProperties } from './assert-has-properties'
+export { AssertionFunction, UnpackAssertionFunction } from './assertion-function'
