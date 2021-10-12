@@ -1,5 +1,5 @@
 {
-  "name": "@lucaspaganini/ts-utils",
+  "name": "@lucaspaganini/ts",
   "version": "0.0.0-PLACEHOLDER",
   "description": "Utilities for TypeScript projects",
   "keywords": [
@@ -18,14 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LucasPaganini/ts-utils.git"
+    "url": "git+https://github.com/LucasPaganini/ts.git"
   },
   "author": "Lucas Paganini <me@lucaspaganini.com> (https://lucaspaganini.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/LucasPaganini/ts-utils/issues"
+    "url": "https://github.com/LucasPaganini/ts/issues"
   },
-  "homepage": "https://github.com/LucasPaganini/ts-utils#readme",
+  "homepage": "https://github.com/LucasPaganini/ts#readme",
   "devDependencies": {
     "@types/jasmine": "^3.6.3",
     "@types/lodash": "^4.14.175",

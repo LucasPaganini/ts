@@ -22,7 +22,7 @@ We use Docker containers to provide a normalized development experience to all c
 
 ## Github Workflow
 
-Before starting any work, make sure there's a [Github issue](https://github.com/LucasPaganini/ts-utils/issues) describing what will be done (if there's none, [create one](https://github.com/LucasPaganini/ts-utils/issues/new)). In that issue, assign yourself as the responsible and tag it with `"In progress"`.
+Before starting any work, make sure there's a [Github issue](https://github.com/LucasPaganini/ts/issues) describing what will be done (if there's none, [create one](https://github.com/LucasPaganini/ts/issues/new)). In that issue, assign yourself as the responsible and tag it with `"In progress"`.
 
 With an existing issue associated with your work, create a branch for your work using the following convention:
 
