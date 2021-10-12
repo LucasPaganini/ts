@@ -52,11 +52,12 @@ export const makeAsyncPredicateFunction: MakeAsyncPredicateFunction =
 const differentValueError = () =>
   Error(`The arguments given to the async generated function are different than the ones given to the initial function`)
 
-const arraysAreDifferent = <T>(a: Array<T>, b: Array<T>): boolean => {
+const arraysAreDifferent = <T>(arrayA: Array<T>, arrayB: Array<T>): boolean => {
   // If the array lengths are different, the arrays are certainly different
-  if (a.length !== a.length) return true
+  if (arrayA.length !== arrayB.length) return true
+  const arrayLength = arrayA.length
 
   // If their lengths are the same, we need to compare the values
-  const zippedArray = Array.from({ length: a.length }).map((_, i) => [a[i], a[i]])
+  const zippedArray = Array.from({ length: arrayLength }).map((_, i) => [arrayA[i], arrayB[i]])
   return zippedArray.some(([a, b]) => a !== b)
 }
