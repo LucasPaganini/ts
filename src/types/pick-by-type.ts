@@ -6,6 +6,15 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
-import { ObjectValues } from './object-values'
+import { PickPropertyByType } from './pick-property-by-type'
 
-export type PropertyOfType<O, T> = ObjectValues<{ [P in keyof O]: O[P] extends T ? P : never }>
+/**
+ * @example
+ * ```ts
+ * type A = { a: string; b: number; c: Date; d: Date }
+ * PickByType<A, string> //=> { a: string }
+ * PickByType<A, number> //=> { b: number }
+ * PickByType<A, Date> //=> { c: Date; d: Date }
+ * ```
+ */
+export type PickByType<O, T> = Pick<O, PickPropertyByType<O, T>>

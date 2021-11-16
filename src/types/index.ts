@@ -9,4 +9,5 @@
 export { Mutable } from './mutable'
 export { NonNullableObject } from './non-nullable-object'
 export { ObjectValues } from './object-values'
-export { PropertyOfType } from './property-of-type'
+export { PickByType } from './pick-by-type'
+export { PickPropertyByType } from './pick-property-by-type'
