@@ -7,5 +7,6 @@
  **************************************************************************/
 
 export * from './assertions'
+export * from './core'
 export * from './predicates'
 export * from './types'
