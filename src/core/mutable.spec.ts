@@ -6,4 +6,12 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
-export type NonNullableObject<T> = { [P in keyof T]: NonNullable<T[P]> }
+import { expectTypeOf } from 'expect-type'
+import { Mutable } from './mutable'
+
+describe('Mutable', () => {
+  it('should convert a readonly type a mutable one', () => {
+    expectTypeOf<Mutable<ReadonlyArray<number>>>().toEqualTypeOf<Array<number>>()
+    expectTypeOf<Mutable<{ readonly a: string }>>().toEqualTypeOf<{ a: string }>()
+  })
+})

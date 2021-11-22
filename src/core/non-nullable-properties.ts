@@ -6,9 +6,4 @@
  * MIT license. See the LICENSE.md file for details.
  **************************************************************************/
 
-export { makeConstraint } from './make-constraint'
-export { Mutable } from './mutable'
-export { NonNullableProperties } from './non-nullable-properties'
-export { ObjectValues } from './object-values'
-export { PickByType } from './pick-by-type'
-export { PickPropertyByType } from './pick-property-by-type'
+export type NonNullableProperties<T> = { [P in keyof Required<T>]: NonNullable<T[P]> }
