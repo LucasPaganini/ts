@@ -8,3 +8,4 @@
 
 export { assertHasProperties } from './assert-has-properties'
 export { AssertionFunction, UnpackAssertionFunction } from './assertion-function'
+export { fromPredicateFunction } from './from-predicate-function'
