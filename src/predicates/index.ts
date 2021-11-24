@@ -13,8 +13,8 @@ export { makeIsIncluded } from './make-is-included'
 export { makeIsInstance } from './make-is-instance'
 export { makeIsNot } from './make-is-not'
 export {
-  AsyncUnguardedPredicateFunction as AsyncUnguardedPredicateFunction,
-  PredicateFunction as PredicateFunction,
-  UnguardedPredicateFunction as UnguardedPredicateFunction,
-  UnpackPredicateFunction as UnpackPredicateFunction,
+  AsyncUnguardedPredicateFunction,
+  PredicateFunction,
+  UnguardedPredicateFunction,
+  UnpackPredicateFunction,
 } from './predicate-fn'
