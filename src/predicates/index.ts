@@ -14,6 +14,7 @@ export { makeIsInstance } from './make-is-instance'
 export { makeIsNot } from './make-is-not'
 export {
   AsyncUnguardedPredicateFunction,
+  AsyncPredicateFunction,
   PredicateFunction,
   UnguardedPredicateFunction,
   UnpackPredicateFunction,
